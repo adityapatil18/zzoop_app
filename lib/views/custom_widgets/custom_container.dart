@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:zzoop/views/custom_widgets/custom_rating_container.dart';
+import 'package:zzoop/views/custom_widgets/custom_rating_counts_widgets.dart';
+import 'package:zzoop/views/custom_widgets/custom_ratingbar_widegt.dart';
 
 class CustomContainer extends StatelessWidget {
   const CustomContainer({super.key});
@@ -91,33 +93,20 @@ class CustomContainer extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            Container(
-              alignment: Alignment.center,
-              height: 20,
-              width: 24,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(3),
-                  color: Color(0xFF1B4F7F)),
-              child: Text(
-                '4.3',
-                style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white),
-              ),
-            ),
+            CustomRatingContainer(
+                width: 24,
+                height: 20,
+                borderRadius: 5,
+                text: '4.3',
+                fontSize: 11),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                RatingBarIndicator(
-                  rating: 5,
-                  itemSize: 13.87,
-                  itemCount: 5,
-                  itemBuilder: (context, index) => Icon(
-                    Icons.star,
-                    color: Color(0xFFFFC107),
-                  ),
-                ),
+                CustomRatingBar(
+                    rating: 4.3,
+                    itemSize: 13.87,
+                    itemCount: 5,
+                    iconColor: Color(0xFFFFC107)),
                 Container(
                   alignment: Alignment.center,
                   height: 21,
@@ -135,13 +124,8 @@ class CustomContainer extends StatelessWidget {
                 )
               ],
             ),
-            Text(
-              '220 ratings',
-              style: TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white),
-            )
+            CustomRatingCount(
+                text: '220 Ratings', fontSize: 10, color: Colors.white)
           ],
         ),
       ),
