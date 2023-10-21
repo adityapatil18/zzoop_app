@@ -111,7 +111,7 @@ class contactInfo extends StatelessWidget {
                     fontColor: Color(0xFF1B4F7F),
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
-                    buttonSize: Size(183, 60),
+                    buttonSize: Size(150, 60),
                   ),
                   CustomButton(
                     onPressed: () {},
@@ -122,7 +122,7 @@ class contactInfo extends StatelessWidget {
                     fontColor: Color(0xFF1B4F7F),
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
-                    buttonSize: Size(183, 60),
+                    buttonSize: Size(150, 60),
                   )
                 ],
               ),

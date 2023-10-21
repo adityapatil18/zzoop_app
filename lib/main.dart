@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zzoop/views/screens/cateogires_screen.dart';
+import 'package:zzoop/views/screens/home_screen.dart';
 import 'package:zzoop/views/screens/splash_screeen.dart';
+import 'package:zzoop/views/screens/try.dart';
 
 void main() {
   runApp(ZZOOP());
@@ -17,7 +19,7 @@ class ZZOOP extends StatelessWidget {
       theme: ThemeData(
           appBarTheme: AppBarTheme(elevation: 0, color: Colors.white),
           textTheme: GoogleFonts.barlowTextTheme(Theme.of(context).textTheme)),
-      home: CategoriesScreen(),
+      home: SplashScreen(),
     );
   }
 }
