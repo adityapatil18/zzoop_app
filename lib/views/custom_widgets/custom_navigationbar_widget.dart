@@ -12,8 +12,13 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      fixedColor: Colors.black,
+      backgroundColor: Color(0xFF07D58C),
+      // fixedColor: Color(0xFF07D58C),
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+
       currentIndex: currentIndex,
+
       onTap: onTabTapped,
       items: [
         BottomNavigationBarItem(
@@ -50,7 +55,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
           label: 'Profile',
         ),
       ],
-      unselectedItemColor: Colors.white,
+      // unselectedItemColor: Colors.black,
     );
   }
 }

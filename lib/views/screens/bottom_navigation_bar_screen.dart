@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zzoop/views/screens/cateog_screen.dart';
+import 'package:zzoop/views/screens/cateogires_screen.dart';
 import 'package:zzoop/views/screens/home_screen.dart';
 import 'package:zzoop/views/screens/profile_screen.dart';
 
@@ -18,7 +18,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   int _currentIndex = 0;
   final List<Widget> screens = [
     HomeScreen(),
-    CateScreen(),
+    CategoriesScreen(),
     SettingsScreen(),
     ProfileScreen(),
   ];

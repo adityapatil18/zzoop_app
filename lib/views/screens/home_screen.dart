@@ -3,7 +3,6 @@ import 'package:zzoop/views/custom_widgets/custom_appbar.dart';
 import 'package:zzoop/views/custom_widgets/custom_cateogry_container.dart';
 import 'package:zzoop/views/custom_widgets/custom_navigationbar_widget.dart';
 import 'package:zzoop/views/custom_widgets/custom_text.dart';
-import 'package:zzoop/views/screens/cateog_screen.dart';
 import 'package:zzoop/views/screens/profile_screen.dart';
 import 'package:zzoop/views/screens/send_enquiry_screen.dart';
 import 'package:zzoop/views/screens/settings_screen.dart';
@@ -335,30 +334,39 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
                   itemBuilder: (context, index) {
-                    return Container(
-                      width: 156.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        shape: BoxShape.rectangle,
-                      ),
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SendEnquiryScreen(),
+                            ));
+                      },
+                      child: Container(
+                        width: 156.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          shape: BoxShape.rectangle,
+                        ),
 
-                      margin:
-                          EdgeInsets.all(3.0), // Add margin between containers
-                      // You can set your desired color here
-                      child: Stack(
-                        children: [
-                          Image.asset(
-                            'images/pack.png',
-                            fit: BoxFit.contain,
-                          ),
-                          const Center(
-                            child: CustomText(
-                                text: 'Pest Control services',
-                                fontWeight: FontWeight.w700,
-                                textColor: Colors.white,
-                                textSize: 12),
-                          )
-                        ],
+                        margin: EdgeInsets.all(
+                            3.0), // Add margin between containers
+                        // You can set your desired color here
+                        child: Stack(
+                          children: [
+                            Image.asset(
+                              'images/pack.png',
+                              fit: BoxFit.contain,
+                            ),
+                            const Center(
+                              child: CustomText(
+                                  text: 'Pest Control services',
+                                  fontWeight: FontWeight.w700,
+                                  textColor: Colors.white,
+                                  textSize: 12),
+                            )
+                          ],
+                        ),
                       ),
                     );
                   },

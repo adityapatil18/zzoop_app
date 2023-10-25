@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:zzoop/views/screens/bottom_navigation_bar_screen.dart';
 import 'package:zzoop/views/screens/home_screen.dart';
 import 'package:zzoop/views/screens/send_enquiry_screen.dart';
 
@@ -138,7 +139,7 @@ class OtpVerificationScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
+                              builder: (context) => BottomNavigationBarScreen(),
                             ));
                         // verifyOTPCode();
                       },
