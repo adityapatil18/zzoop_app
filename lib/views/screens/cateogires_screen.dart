@@ -4,6 +4,8 @@ import 'package:zzoop/views/custom_widgets/custom_services_list_widget.dart';
 import 'package:zzoop/views/custom_widgets/custom_text.dart';
 import 'package:zzoop/views/screens/indiviual_cateogies_screen.dart';
 
+import '../../constants/colors.dart';
+
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
@@ -18,19 +20,16 @@ class CategoriesScreen extends StatelessWidget {
             Container(
               height: 60,
               width: MediaQuery.sizeOf(context).width,
-              color: Color(0xFF161D24),
+              color: AppColors.mainBlackColor,
               child: Row(
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(
-                      Icons.arrow_back_sharp,
-                      color: Colors.white,
-                    ),
+                    icon: Icon(Icons.arrow_back_sharp, color: AppColors.white),
                   ),
                   CustomText(
                       text: 'Home Servieces',
-                      textColor: Colors.white,
+                      textColor: AppColors.white,
                       textSize: 14,
                       fontWeight: FontWeight.w700)
                 ],

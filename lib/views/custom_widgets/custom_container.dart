@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_container.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_counts_widgets.dart';
 import 'package:zzoop/views/custom_widgets/custom_ratingbar_widegt.dart';
@@ -12,7 +13,7 @@ class CustomContainer extends StatelessWidget {
       height: 202,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
-          color: Colors.black.withOpacity(1),
+          color: AppColors.mainBlackColor.withOpacity(1),
           image: DecorationImage(
               image: AssetImage('images/rectnagle_12.png'), opacity: 0.3)),
       child: Padding(
@@ -29,7 +30,7 @@ class CustomContainer extends StatelessWidget {
                 IconButton(
                   onPressed: () {},
                   icon: Icon(Icons.arrow_back),
-                  color: Colors.white,
+                  color: AppColors.white,
                   iconSize: 20,
                 ),
                 Container(
@@ -40,7 +41,7 @@ class CustomContainer extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.share,
-                        color: Colors.white,
+                        color: AppColors.white,
                         size: 14,
                       ),
                       Text(
@@ -48,7 +49,7 @@ class CustomContainer extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
-                            color: Colors.white),
+                            color: AppColors.white),
                       )
                     ],
                   ),
@@ -60,14 +61,14 @@ class CustomContainer extends StatelessWidget {
               height: 18.7,
               width: 83.54,
               decoration: BoxDecoration(
-                  color: Color(0xFF07D58C),
+                  color: AppColors.greenColor,
                   borderRadius: BorderRadius.circular(30)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Icon(
                     Icons.check_circle,
-                    color: Color(0xFF161D24),
+                    color: AppColors.mainBlackColor,
                     size: 11,
                   ),
                   Text(
@@ -75,7 +76,7 @@ class CustomContainer extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 8,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xFF161D24)),
+                        color: AppColors.mainBlackColor),
                   )
                 ],
               ),
@@ -88,7 +89,7 @@ class CustomContainer extends StatelessWidget {
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
-                  color: Colors.white),
+                  color: AppColors.white),
             ),
             SizedBox(
               height: 12,
@@ -103,29 +104,30 @@ class CustomContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomRatingBar(
-                    rating: 4.3,
-                    itemSize: 13.87,
-                    itemCount: 5,
-                    iconColor: Color(0xFFFFC107)),
+                  rating: 4.3,
+                  itemSize: 13.87,
+                  itemCount: 5,
+                  iconColor: AppColors.starColor,
+                ),
                 Container(
                   alignment: Alignment.center,
                   height: 21,
                   width: 101,
                   decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: AppColors.mainBlackColor,
                       borderRadius: BorderRadius.circular(5)),
                   child: Text(
                     'Printing Services',
                     style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w700,
-                        color: Colors.white),
+                        color: AppColors.white),
                   ),
                 )
               ],
             ),
             CustomRatingCount(
-                text: '220 Ratings', fontSize: 10, color: Colors.white)
+                text: '220 Ratings', fontSize: 10, color: AppColors.white)
           ],
         ),
       ),

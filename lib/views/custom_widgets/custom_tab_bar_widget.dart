@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 
 class CustomTabBarWidget extends StatelessWidget {
   const CustomTabBarWidget(
@@ -17,13 +18,13 @@ class CustomTabBarWidget extends StatelessWidget {
 
             isScrollable: true,
             indicatorWeight: 1,
-            indicatorColor: Color(0xFF1B4F7F),
-            labelColor: Color(0xFF1B4F7F),
+            indicatorColor: AppColors.containerColor,
+            labelColor: AppColors.containerColor,
             labelStyle: TextStyle(fontWeight: FontWeight.w600),
             // dividerColor: Color(0xFFF7F7F2),
             unselectedLabelStyle:
                 TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
-            unselectedLabelColor: Colors.black,
+            unselectedLabelColor: AppColors.mainBlackColor,
           ),
           Expanded(child: TabBarView(children: tabviews))
         ],

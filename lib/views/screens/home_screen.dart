@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_appbar.dart';
 import 'package:zzoop/views/custom_widgets/custom_cateogry_container.dart';
 import 'package:zzoop/views/custom_widgets/custom_navigationbar_widget.dart';
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Icon(
                       Icons.my_location_sharp,
-                      color: Color(0xFF1B4F7F),
+                      color: AppColors.containerColor,
                       size: 13.33,
                     ),
                     SizedBox(
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     CustomText(
                         text: 'Location',
-                        textColor: Color(0xFF161D24),
+                        textColor: AppColors.mainBlackColor,
                         textSize: 12,
                         fontWeight: FontWeight.w400)
                   ],
@@ -90,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Icon(
                             Icons.search,
-                            color: Color(0xFF161D24),
+                            color: AppColors.mainBlackColor,
                             size: 16,
                           ),
                           SizedBox(width: 8.0),
@@ -101,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 hintStyle: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
-                                    color: Color(0xFF161D24)),
+                                    color: AppColors.mainBlackColor),
                                 border: InputBorder.none,
                               ),
                             ),
@@ -123,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.white,
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
@@ -132,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     CustomText(
                         text: 'Essential Category',
-                        textColor: Color(0xFF161D24),
+                        textColor: AppColors.mainBlackColor,
                         textSize: 14,
                         fontWeight: FontWeight.w400)
                   ],
@@ -227,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 alignment: Alignment.center,
                 height: 128,
                 width: MediaQuery.sizeOf(context).width,
-                color: Color(0xFF141D3F),
+                color: AppColors.darkBlueColor,
                 child: Row(
                   children: [
                     Padding(
@@ -238,12 +239,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           CustomText(
                               text: 'List your Business Now',
-                              textColor: Colors.white,
+                              textColor: AppColors.white,
                               textSize: 19.85,
                               fontWeight: FontWeight.w400),
                           CustomText(
                               text: 'FREE for 6 Months',
-                              textColor: Colors.white,
+                              textColor: AppColors.white,
                               textSize: 15.27,
                               fontWeight: FontWeight.w700),
                           // Container(
@@ -261,7 +262,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           borderRadius:
                                               BorderRadius.circular(4.74))),
                                   backgroundColor: MaterialStatePropertyAll(
-                                      Color(0xFF07D58C)),
+                                      AppColors.greenColor),
                                   minimumSize:
                                       MaterialStateProperty.all(Size(120, 30))),
                               onPressed: () {},
@@ -269,7 +270,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   CustomText(
                                       text: 'JOIN NOW',
-                                      textColor: Colors.white,
+                                      textColor: AppColors.white,
                                       textSize: 8.54,
                                       fontWeight: FontWeight.w600),
                                   SizedBox(
@@ -277,11 +278,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                   CircleAvatar(
                                     radius: 4,
-                                    backgroundColor: Colors.white,
+                                    backgroundColor: AppColors.white,
                                     child: Icon(
                                       Icons.arrow_forward,
                                       size: 7,
-                                      color: Color(0xFF07D58C),
+                                      color: AppColors.greenColor,
                                     ),
                                   )
                                 ],
@@ -306,7 +307,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     CustomText(
                         text: 'Mostly Searched Businesses',
-                        textColor: Color(0xFF161D24),
+                        textColor: AppColors.mainBlackColor,
                         textSize: 14,
                         fontWeight: FontWeight.w400),
                   ],
@@ -362,7 +363,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: CustomText(
                                   text: 'Pest Control services',
                                   fontWeight: FontWeight.w700,
-                                  textColor: Colors.white,
+                                  textColor: AppColors.white,
                                   textSize: 12),
                             )
                           ],

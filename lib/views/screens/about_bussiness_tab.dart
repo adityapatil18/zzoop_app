@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_bottom_button.dart';
 
 import '../custom_widgets/custom_services_widget.dart';
@@ -29,14 +30,14 @@ class AboutBussiness extends StatelessWidget {
               alignment: Alignment.center,
               height: 75,
               width: MediaQuery.sizeOf(context).width,
-              color: Color(0xFFDCFFF3).withOpacity(1),
+              color: AppColors.bgColor.withOpacity(1),
               child: Text(
                 "Over 20 Years of Excellence in the Printing Industry, \nSpecializing in High-Quality 3D Prints",
                 style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.italic,
-                    color: Color(0xFF161D24)),
+                    color: AppColors.mainBlackColor),
               ),
             ),
             SizedBox(
@@ -52,7 +53,7 @@ class AboutBussiness extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xFF161D24)),
+                        color: AppColors.mainBlackColor),
                   ),
                   SizedBox(
                     height: 4,
@@ -63,7 +64,7 @@ class AboutBussiness extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: Color(0xFF161D24)),
+                        color: AppColors.mainBlackColor),
                   ),
                   SizedBox(
                     height: 16,
@@ -73,7 +74,7 @@ class AboutBussiness extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xFF161D24)),
+                        color: AppColors.mainBlackColor),
                   ),
                   SizedBox(
                     height: 4,
@@ -99,15 +100,14 @@ class AboutBussiness extends StatelessWidget {
                           height: 24,
                           width: 103,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Color(0xFFD0FCEC),
-                          ),
+                              borderRadius: BorderRadius.circular(5),
+                              color: AppColors.hashColor),
                           child: Text(
                             type,
                             style: TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w400,
-                                color: Color(0xFF161D24)),
+                                color: AppColors.mainBlackColor),
                           ),
                         );
                       },

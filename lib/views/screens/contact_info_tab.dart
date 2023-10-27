@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zzoop/views/custom_widgets/cutom_elevated_button_widget.dart';
 
+import '../../constants/colors.dart';
 import '../custom_widgets/custom_bottom_button.dart';
 
 class contactInfo extends StatelessWidget {
@@ -28,7 +29,7 @@ class contactInfo extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFF161D24)),
+                            color: AppColors.mainBlackColor),
                       ),
                       SizedBox(
                         height: 5,
@@ -45,7 +46,7 @@ class contactInfo extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
-                              color: Color(0xFF161D24)),
+                              color: AppColors.mainBlackColor),
                         ),
                       ),
                       // SizedBox(
@@ -56,7 +57,7 @@ class contactInfo extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFF161D24)),
+                            color: AppColors.mainBlackColor),
                       ),
                       SizedBox(
                         height: 5,
@@ -66,7 +67,7 @@ class contactInfo extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
-                            color: Color(0xFF161D24)),
+                            color: AppColors.mainBlackColor),
                       )
                     ],
                   ),
@@ -87,7 +88,7 @@ class contactInfo extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFF1B4F7F)),
+                            color: AppColors.containerColor),
                       )
                     ],
                   ),
@@ -105,10 +106,10 @@ class contactInfo extends StatelessWidget {
                   CustomButton(
                     onPressed: () {},
                     text: 'Schedule Call',
-                    buttonColor: Colors.white,
+                    buttonColor: AppColors.white,
                     borderRadius: 5,
                     borderSide: BorderSide(width: 1),
-                    fontColor: Color(0xFF1B4F7F),
+                    fontColor: AppColors.containerColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                     buttonSize: Size(150, 60),
@@ -119,7 +120,7 @@ class contactInfo extends StatelessWidget {
                     borderRadius: 5,
                     buttonColor: Colors.white,
                     borderSide: BorderSide(width: 1),
-                    fontColor: Color(0xFF1B4F7F),
+                    fontColor: AppColors.containerColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                     buttonSize: Size(150, 60),

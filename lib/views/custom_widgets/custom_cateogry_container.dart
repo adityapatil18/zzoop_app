@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_text.dart';
 
 class CustomCateogryContainer extends StatelessWidget {
@@ -35,7 +36,7 @@ class CustomCateogryContainer extends StatelessWidget {
           ),
           CustomText(
               text: labelText,
-              textColor: Colors.black,
+              textColor: AppColors.mainBlackColor,
               textSize: 10,
               fontWeight: FontWeight.w400)
         ],

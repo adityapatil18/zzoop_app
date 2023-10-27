@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 
 class CustomBottomButton extends StatelessWidget {
   const CustomBottomButton(
@@ -12,7 +13,7 @@ class CustomBottomButton extends StatelessWidget {
         onPressed: onPressed,
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(
-              Color(0xFF1B4F7F)), // Set the desired color
+              AppColors.containerColor), // Set the desired color
 
           minimumSize: MaterialStateProperty.all(
               Size(MediaQuery.sizeOf(context).width, 65)),
@@ -20,7 +21,9 @@ class CustomBottomButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.white),
         ));
   }
 }

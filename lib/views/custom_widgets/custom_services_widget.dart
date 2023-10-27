@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/colors.dart';
+
 class CustomServicesText extends StatelessWidget {
   const CustomServicesText({super.key, required this.text});
   final String text;
@@ -13,7 +15,7 @@ class CustomServicesText extends StatelessWidget {
           width: 3,
           height: 3,
           decoration: BoxDecoration(
-            color: Color(0xFF161D24), // Customize the dot color as needed
+            color: AppColors.mainBlackColor,
             shape: BoxShape.circle,
           ),
         ),
@@ -26,7 +28,7 @@ class CustomServicesText extends StatelessWidget {
           style: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w400,
-            color: Color(0xFF161D24),
+            color: AppColors.mainBlackColor,
           ),
         ),
       ],

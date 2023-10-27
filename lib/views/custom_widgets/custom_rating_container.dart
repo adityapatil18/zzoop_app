@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 
 class CustomRatingContainer extends StatelessWidget {
   const CustomRatingContainer(
@@ -22,13 +23,13 @@ class CustomRatingContainer extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius),
-          color: Color(0xFF1B4F7F)),
+          color: AppColors.containerColor),
       child: Text(
         text,
         style: TextStyle(
             fontSize: fontSize,
             fontWeight: FontWeight.w700,
-            color: Colors.white),
+            color: AppColors.white),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final int currentIndex;
@@ -12,7 +13,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: Color(0xFF07D58C),
+      backgroundColor: AppColors.greenColor,
       // fixedColor: Color(0xFF07D58C),
       showSelectedLabels: true,
       showUnselectedLabels: true,
@@ -22,7 +23,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
       onTap: onTabTapped,
       items: [
         BottomNavigationBarItem(
-          backgroundColor: Color(0xFF07D58C),
+          backgroundColor: AppColors.greenColor,
           icon: Image.asset(
             'images/home.png',
             height: 24,
