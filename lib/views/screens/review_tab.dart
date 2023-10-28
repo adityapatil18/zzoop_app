@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_bottom_button.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_container.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_counts_widgets.dart';
@@ -37,10 +38,12 @@ class _ReviewtabState extends State<Reviewtab> {
                           textSize: 14,
                           fontWeight: FontWeight.w700),
                       CustomRatingBar(
-                          rating: 0,
-                          itemSize: 31.91,
-                          itemCount: 5,
-                          iconColor: Color(0xFFE3E3E3)),
+                        rating: 0,
+                        itemSize: 31.91,
+                        itemCount: 5,
+                        iconColor: Color(0xFFE3E3E3),
+                        unstarColor: null,
+                      ),
                       SizedBox(
                         height: 24,
                       ),
@@ -112,7 +115,8 @@ class _ReviewtabState extends State<Reviewtab> {
                           rating: 4.3,
                           itemSize: 23.1,
                           itemCount: 5,
-                          iconColor: Color(0xFFFFC107)),
+                          iconColor: Color(0xFFFFC107),
+                          unstarColor: AppColors.unStarColor),
                       CustomRatingCount(
                           text: '220', fontSize: 14, color: Color(0xFF161D24)),
                     ],
@@ -150,7 +154,8 @@ class _ReviewtabState extends State<Reviewtab> {
                                 rating: 4.3,
                                 itemSize: 13.08,
                                 itemCount: 5,
-                                iconColor: Color(0xFFFFC107)),
+                                iconColor: Color(0xFFFFC107),
+                                unstarColor: AppColors.unStarColor),
                           ),
                           Text(
                             'Impressive Stationery Prints',

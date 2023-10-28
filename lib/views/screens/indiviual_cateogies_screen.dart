@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_appbar.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_container.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_counts_widgets.dart';
@@ -24,14 +25,14 @@ class IndiviualServicesScreen extends StatelessWidget {
           Container(
             height: 60,
             width: MediaQuery.sizeOf(context).width,
-            color: Color(0xFF161D24),
+            color: AppColors.mainBlackColor,
             child: Row(
               children: [
                 IconButton(
                   onPressed: () {},
                   icon: Icon(
                     Icons.arrow_back_sharp,
-                    color: Colors.white,
+                    color: AppColors.white,
                   ),
                 ),
                 Text(
@@ -39,7 +40,7 @@ class IndiviualServicesScreen extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
-                      color: Colors.white),
+                      color: AppColors.white),
                 )
               ],
             ),
@@ -53,9 +54,10 @@ class IndiviualServicesScreen extends StatelessWidget {
               Text(
                 'Sort by',
                 style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF161D24)),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.mainBlackColor,
+                ),
               ),
               Container(
                 alignment: Alignment.center,
@@ -83,9 +85,10 @@ class IndiviualServicesScreen extends StatelessWidget {
               Text(
                 'All Filters',
                 style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF161D24)),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.mainBlackColor,
+                ),
               )
             ],
           ),
@@ -99,13 +102,13 @@ class IndiviualServicesScreen extends StatelessWidget {
               width: 87,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Color(0xFF879AC1)),
+                  color: AppColors.kmColor),
               child: Text(
                 'Within 500m',
                 style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.w700,
-                    color: Color(0xFF161D24)),
+                    color: AppColors.mainBlackColor),
               ),
             ),
           ),
@@ -123,7 +126,7 @@ class IndiviualServicesScreen extends StatelessWidget {
                     ),
                     Container(
                       height: 206,
-                      color: Colors.white,
+                      color: AppColors.white,
                       width: MediaQuery.sizeOf(context).width,
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
@@ -153,7 +156,7 @@ class IndiviualServicesScreen extends StatelessWidget {
                                           style: TextStyle(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w900,
-                                              color: Color(0xFF161D24)),
+                                              color: AppColors.mainBlackColor),
                                         ),
                                         Text(
                                           maxLines: 4,
@@ -161,7 +164,7 @@ class IndiviualServicesScreen extends StatelessWidget {
                                           style: TextStyle(
                                               fontSize: 12,
                                               fontWeight: FontWeight.w400,
-                                              color: Color(0xFF161D24)),
+                                              color: AppColors.mainBlackColor),
                                         ),
                                         Container(
                                           alignment: Alignment.center,
@@ -177,7 +180,8 @@ class IndiviualServicesScreen extends StatelessWidget {
                                             style: TextStyle(
                                                 fontSize: 10,
                                                 fontWeight: FontWeight.w700,
-                                                color: Color(0xFF161D24)),
+                                                color:
+                                                    AppColors.mainBlackColor),
                                           ),
                                         ),
                                         Text(
@@ -185,7 +189,7 @@ class IndiviualServicesScreen extends StatelessWidget {
                                           style: TextStyle(
                                               fontSize: 12,
                                               fontWeight: FontWeight.w400,
-                                              color: Color(0xFF161D24)),
+                                              color: AppColors.mainBlackColor),
                                         )
                                       ],
                                     ),
@@ -209,7 +213,8 @@ class IndiviualServicesScreen extends StatelessWidget {
                                         rating: 4.3,
                                         itemSize: 13.87,
                                         itemCount: 5,
-                                        iconColor: Color(0xFFFFC107)),
+                                        iconColor: AppColors.starColor,
+                                        unstarColor: AppColors.unStarColor),
                                     CustomRatingCount(
                                         text: '220 ratings',
                                         fontSize: 10,

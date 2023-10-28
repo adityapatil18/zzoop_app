@@ -108,6 +108,7 @@ class CustomContainer extends StatelessWidget {
                   itemSize: 13.87,
                   itemCount: 5,
                   iconColor: AppColors.starColor,
+                  unstarColor: AppColors.unStarColor,
                 ),
                 Container(
                   alignment: Alignment.center,

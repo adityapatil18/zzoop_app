@@ -12,4 +12,5 @@ class AppColors {
   static const Color hashColor = Color(0xFFD0FCEC);
   static const Color starColor = Color(0xFFFFC107);
   static const Color unStarColor = Color(0xFFE3E3E3);
+  static const Color kmColor = Color(0xFF879AC1);
 }

@@ -5,13 +5,11 @@ import 'package:zzoop/views/screens/contact_info_tab.dart';
 import 'package:zzoop/views/custom_widgets/custom_tab_bar_widget.dart';
 import 'package:zzoop/views/screens/review_tab.dart';
 
-
 class SendEnquiryScreen extends StatelessWidget {
   const SendEnquiryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     final tabs = [
       Tab(
         text: "Contact Information",

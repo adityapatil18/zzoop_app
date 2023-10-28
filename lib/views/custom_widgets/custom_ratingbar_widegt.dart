@@ -7,18 +7,20 @@ class CustomRatingBar extends StatelessWidget {
   final double itemSize;
   final int itemCount;
   final Color iconColor;
+  final Color? unstarColor;
 
   CustomRatingBar({
     required this.rating,
     required this.itemSize,
     required this.itemCount,
     required this.iconColor,
+    required this.unstarColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return RatingBarIndicator(
-      unratedColor: AppColors.unStarColor,
+      unratedColor: unstarColor,
       rating: rating,
       itemSize: itemSize,
       itemCount: itemCount,

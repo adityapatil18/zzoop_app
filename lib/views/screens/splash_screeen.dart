@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/screens/login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -19,7 +20,7 @@ class SplashScreen extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height,
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(1),
+            color: AppColors.mainBlackColor.withOpacity(1),
             image: DecorationImage(
               image: AssetImage('images/bg_image.png'),
               opacity: 0.3,
@@ -67,7 +68,7 @@ class SplashScreen extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
-                      color: Color(0xFFFFFFFF)),
+                      color: AppColors.white),
                 )
               ],
             ),
