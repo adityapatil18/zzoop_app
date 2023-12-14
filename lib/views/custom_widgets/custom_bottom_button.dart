@@ -12,6 +12,8 @@ class CustomBottomButton extends StatelessWidget {
     return ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
+          shape: MaterialStatePropertyAll(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(0))),
           backgroundColor: MaterialStateProperty.all(
               AppColors.containerColor), // Set the desired color
 

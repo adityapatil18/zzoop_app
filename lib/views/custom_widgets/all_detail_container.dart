@@ -4,13 +4,13 @@ import 'package:zzoop/views/custom_widgets/custom_rating_container.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_counts_widgets.dart';
 import 'package:zzoop/views/custom_widgets/custom_ratingbar_widegt.dart';
 
-class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key});
+class ALLDetailContainer extends StatelessWidget {
+  const ALLDetailContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 202,
+      height: 230,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
           color: AppColors.mainBlackColor.withOpacity(1),
@@ -22,13 +22,15 @@ class CustomContainer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 7,
+              height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   icon: Icon(Icons.arrow_back),
                   color: AppColors.white,
                   iconSize: 20,

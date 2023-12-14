@@ -12,7 +12,12 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(
+        logoImagePath: "images/Logo.png",
+        profileImagePath: "images/profilee.png",
+        onProfileTap: () {},
+        onNotificationTap: () {},
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -24,7 +29,9 @@ class CategoriesScreen extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: Icon(Icons.arrow_back_sharp, color: AppColors.white),
                   ),
                   CustomText(
@@ -59,8 +66,13 @@ class CategoriesScreen extends StatelessWidget {
               onPressed: () {},
             ),
             CustomServicesList(
-              text: 'Plumbing',
-              imagePath: 'images/Icons.png',
+              text: 'Cleaning',
+              imagePath: 'images/clean.png',
+              onPressed: () {},
+            ),
+            CustomServicesList(
+              text: 'Painting',
+              imagePath: 'images/paint.png',
               onPressed: () {},
             ),
             CustomServicesList(
@@ -69,18 +81,28 @@ class CategoriesScreen extends StatelessWidget {
               onPressed: () {},
             ),
             CustomServicesList(
-              text: 'HVAC',
-              imagePath: 'images/Union.png',
+              text: 'Pest Control',
+              imagePath: 'images/pestt.png',
               onPressed: () {},
             ),
             CustomServicesList(
-              text: 'HVAC',
-              imagePath: 'images/Union.png',
+              text: 'Landscaping and Gardening',
+              imagePath: 'images/gardening.png',
               onPressed: () {},
             ),
             CustomServicesList(
-              text: 'HVAC',
-              imagePath: 'images/Union.png',
+              text: 'Home Security',
+              imagePath: 'images/security.png',
+              onPressed: () {},
+            ),
+            CustomServicesList(
+              text: 'Appliance Repair',
+              imagePath: 'images/repair.png',
+              onPressed: () {},
+            ),
+            CustomServicesList(
+              text: 'Home Renovation and Remodeling',
+              imagePath: 'images/renovation.png',
               onPressed: () {},
             ),
           ],

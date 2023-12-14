@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:zzoop/views/screens/about_bussiness_tab.dart';
-import 'package:zzoop/views/custom_widgets/custom_container.dart';
+import 'package:zzoop/views/custom_widgets/all_detail_container.dart';
 import 'package:zzoop/views/screens/contact_info_tab.dart';
 import 'package:zzoop/views/custom_widgets/custom_tab_bar_widget.dart';
 import 'package:zzoop/views/screens/review_tab.dart';
 
-class SendEnquiryScreen extends StatelessWidget {
-  const SendEnquiryScreen({super.key});
+class SendEnquiryTabScreen extends StatelessWidget {
+  const SendEnquiryTabScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,19 +23,15 @@ class SendEnquiryScreen extends StatelessWidget {
     ];
 
     final tabviews = [
-      contactInfo(),
-      AboutBussiness(),
-      Reviewtab(),
+      contactInfoTab(),
+      AboutBussinessTab(),
+      ReviewTab(),
     ];
     return Scaffold(
       body: Column(
         children: [
-          CustomContainer(),
+          ALLDetailContainer(),
           Expanded(child: CustomTabBarWidget(tabs: tabs, tabviews: tabviews)),
-          // CustomBottomButton(
-          //   onPressed: () {},
-          //   text: 'Send Enquiry',
-          // )
         ],
       ),
     );

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_bottom_button.dart';
+import 'package:zzoop/views/custom_widgets/custom_text.dart';
 
 import '../custom_widgets/custom_services_widget.dart';
 
-class AboutBussiness extends StatelessWidget {
-  const AboutBussiness({super.key});
+class AboutBussinessTab extends StatelessWidget {
+  const AboutBussinessTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,19 +28,18 @@ class AboutBussiness extends StatelessWidget {
               height: 24,
             ),
             Container(
-              alignment: Alignment.center,
-              height: 75,
-              width: MediaQuery.sizeOf(context).width,
-              color: AppColors.bgColor.withOpacity(1),
-              child: Text(
-                "Over 20 Years of Excellence in the Printing Industry, \nSpecializing in High-Quality 3D Prints",
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    fontStyle: FontStyle.italic,
-                    color: AppColors.mainBlackColor),
-              ),
-            ),
+                alignment: Alignment.center,
+                height: 75,
+                width: MediaQuery.sizeOf(context).width,
+                color: AppColors.bgColor.withOpacity(1),
+                child: CustomText(
+                  text:
+                      "Over 20 Years of Excellence in the Printing Industry, \nSpecializing in High-Quality 3D Prints",
+                  textColor: AppColors.mainBlackColor,
+                  textSize: 14,
+                  fontWeight: FontWeight.w500,
+                  isItalic: true,
+                )),
             SizedBox(
               height: 16,
             ),
@@ -48,13 +48,11 @@ class AboutBussiness extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'About Business',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.mainBlackColor),
-                  ),
+                  CustomText(
+                      text: 'About Business',
+                      textColor: AppColors.mainBlackColor,
+                      textSize: 14,
+                      fontWeight: FontWeight.w600),
                   SizedBox(
                     height: 4,
                   ),
@@ -69,13 +67,11 @@ class AboutBussiness extends StatelessWidget {
                   SizedBox(
                     height: 16,
                   ),
-                  Text(
-                    'Services',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.mainBlackColor),
-                  ),
+                  CustomText(
+                      text: 'Services',
+                      textColor: AppColors.mainBlackColor,
+                      textSize: 14,
+                      fontWeight: FontWeight.w600),
                   SizedBox(
                     height: 4,
                   ),
@@ -98,7 +94,7 @@ class AboutBussiness extends StatelessWidget {
                         return Container(
                           alignment: Alignment.center,
                           height: 24,
-                          width: 103,
+                          width: 120,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
                               color: AppColors.hashColor),

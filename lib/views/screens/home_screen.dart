@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_appbar.dart';
-import 'package:zzoop/views/custom_widgets/custom_cateogry_container.dart';
-import 'package:zzoop/views/custom_widgets/custom_navigationbar_widget.dart';
+import 'package:zzoop/views/custom_widgets/cateogry_container.dart';
 import 'package:zzoop/views/custom_widgets/custom_text.dart';
-import 'package:zzoop/views/screens/profile_screen.dart';
 import 'package:zzoop/views/screens/send_enquiry_screen.dart';
-import 'package:zzoop/views/screens/settings_screen.dart';
+
+import '../custom_widgets/custom_rating_container.dart';
+import '../custom_widgets/custom_rating_counts_widgets.dart';
+import '../custom_widgets/custom_ratingbar_widegt.dart';
+import '../custom_widgets/cutom_elevated_button_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,32 +18,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool isContainerVisible = false;
-  bool isExpanded = false;
-
-  void toggleContainerVisibility() {
-    setState(() {
-      isContainerVisible = !isContainerVisible;
-      if (isContainerVisible) {
-        isExpanded = false;
-      }
-    });
-  }
-
-  void toggleContainerExpansion() {
-    setState(() {
-      isExpanded = !isExpanded;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
-      appBar: CustomAppBar(),
-      body: Stack(
-        children: [
-          Column(
+      appBar: CustomAppBar(
+        logoImagePath: "images/Logo.png",
+        profileImagePath: "images/profilee.png",
+        onProfileTap: () {},
+        onNotificationTap: () {},
+      ),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.sizeOf(context).height,
+          width: MediaQuery.sizeOf(context).width,
+          child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -63,29 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              // SearchBar(
-              //   leading: Icon(
-              //     Icons.search,
-              //     color: Color(0xFF161D24),
-              //     size: 16,
-              //   ),
-              //   hintText: 'Grocery Shop near me',
-              //   hintStyle: MaterialStatePropertyAll(TextStyle(
-              //       color: Color(0xFF161D24),
-              //       fontSize: 14,
-              //       fontWeight: FontWeight.w400)),
-              //   elevation: MaterialStatePropertyAll(0),
-
-              // ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
-                      height: 40,
-                      // width: 358,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(10),
+                      height: 50,
                       width: MediaQuery.sizeOf(context).width,
                       child: Row(
                         children: [
@@ -97,6 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           SizedBox(width: 8.0),
                           Expanded(
                             child: TextField(
+                              cursorHeight: 10,
+                              controller: SearchController(),
                               decoration: InputDecoration(
                                 hintText: 'Grocery shop near me',
                                 hintStyle: TextStyle(
@@ -142,7 +121,6 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 20,
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -151,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SendEnquiryScreen(),
+                            builder: (context) => SendEnquiryTabScreen(),
                           ));
                     },
                     child: CustomCateogryContainer(
@@ -166,21 +144,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       imageAsset: 'images/fitness.png',
                       labelText: 'Fitness',
                       containerHeight: 58,
-                      containerWidth: 52,
+                      containerWidth: 87,
                       imageHeight: 32,
                       imageWidth: 32),
                   CustomCateogryContainer(
                       imageAsset: 'images/food.png',
                       labelText: 'Foods & Drinks',
                       containerHeight: 58,
-                      containerWidth: 85,
+                      containerWidth: 87,
                       imageHeight: 32,
                       imageWidth: 32),
                   CustomCateogryContainer(
                       imageAsset: 'images/homes.png',
                       labelText: 'Home & Services',
                       containerHeight: 58,
-                      containerWidth: 82,
+                      containerWidth: 87,
                       imageHeight: 32,
                       imageWidth: 32),
                 ],
@@ -195,28 +173,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       imageAsset: 'images/health.png',
                       labelText: 'Healthcare',
                       containerHeight: 58,
-                      containerWidth: 65,
+                      containerWidth: 87,
                       imageHeight: 32,
                       imageWidth: 32),
                   CustomCateogryContainer(
                       imageAsset: 'images/education.png',
                       labelText: 'Education',
                       containerHeight: 58,
-                      containerWidth: 62,
+                      containerWidth: 87,
                       imageHeight: 32,
                       imageWidth: 32),
                   CustomCateogryContainer(
                       imageAsset: 'images/travel.png',
                       labelText: 'Travel & Tourism',
                       containerHeight: 58,
-                      containerWidth: 88,
+                      containerWidth: 87,
                       imageHeight: 32,
                       imageWidth: 32),
                   CustomCateogryContainer(
                       imageAsset: 'images/gov.png',
                       labelText: 'Local Govt Offices',
                       containerHeight: 58,
-                      containerWidth: 94,
+                      containerWidth: 92,
                       imageHeight: 32,
                       imageWidth: 32),
                 ],
@@ -226,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Container(
                 alignment: Alignment.center,
-                height: 128,
+                height: 140,
                 width: MediaQuery.sizeOf(context).width,
                 color: AppColors.darkBlueColor,
                 child: Row(
@@ -292,14 +270,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Image.asset(
                       'images/personn.png',
-                      height: 128,
-                      width: MediaQuery.sizeOf(context).width - 234,
+                      height: MediaQuery.sizeOf(context).height,
+                      width: MediaQuery.sizeOf(context).width - 260,
                       fit: BoxFit.fitWidth,
                     )
                   ],
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
@@ -313,22 +290,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              // Container(
-              //   height: 105,
-              //   width: 156,
-              //   child: PageView.builder(
-              //     itemCount: 2,
-              //     itemBuilder: (context, index) {
-              //       return Container(
-              //         height: 50,
-              //         width: 156,
-              //         // decoration:
-              //         // BoxDecoration(borderRadius: BorderRadius.circular(30)),
-              //         child: Image.asset('images/pest.png'),
-              //       );
-              //     },
-              //   ),
-              // )
               Container(
                 height: 105.0,
                 child: ListView.builder(
@@ -340,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SendEnquiryScreen(),
+                              builder: (context) => SendEnquiryTabScreen(),
                             ));
                       },
                       child: Container(
@@ -373,63 +334,168 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              // Positioned(
-              //   bottom: isContainerVisible ? 0 : -10,
-              //   left: 0,
-              //   right: 0,
-              //   child: GestureDetector(
-              //     onTap: () {
-              //       if (!isExpanded) {
-              //         toggleContainerVisibility();
-              //       } else {
-              //         toggleContainerExpansion();
-              //       }
-              //     },
-              //     child: AnimatedContainer(
-              //       duration: Duration(milliseconds: 300),
-              //       height: isExpanded ? 70 : 50,
-              //       width: isExpanded
-              //           ? MediaQuery.sizeOf(context).width
-              //           : MediaQuery.sizeOf(context).width,
-              //       decoration: BoxDecoration(
-              //         color: Color(0xFF1B4F7F),
-              //         borderRadius: BorderRadius.circular(isExpanded ? 10 : 0),
-              //       ),
-              //       child: Column(
-              //         mainAxisAlignment: MainAxisAlignment.center,
-              //         children: [
-              //           Text(
-              //             'This is made with Flutter',
-              //             style: TextStyle(
-              //               color: Colors.white,
-              //               fontSize: 16,
-              //               fontWeight: FontWeight.w600,
-              //             ),
-              //           ),
-              //           Positioned(
-              //             top: 5,
-              //             right: 5,
-              //             child: IconButton(
-              //               icon: Icon(
-              //                 isContainerVisible
-              //                     ? Icons.keyboard_arrow_down
-              //                     : Icons.keyboard_arrow_up,
-              //                 color: Colors.white,
-              //               ),
-              //               onPressed: () {
-              //                 toggleContainerVisibility();
-              //                 toggleContainerExpansion();
-              //               },
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              SizedBox(
+                height: 10,
+              ),
+              CustomText(
+                  text: 'Recommended Businesses',
+                  textColor: AppColors.mainBlackColor,
+                  textSize: 14,
+                  fontWeight: FontWeight.w400),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 150,
+                child: ListView.builder(
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Container(
+                          height: 215,
+                          color: AppColors.white,
+                          width: MediaQuery.sizeOf(context).width,
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 110,
+                                      width: 110,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Image.asset('images/plumbing.png'),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(12.0),
+                                      child: Container(
+                                        height: 115,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            CustomText(
+                                                text: 'Super Fast Services',
+                                                textColor:
+                                                    AppColors.mainBlackColor,
+                                                textSize: 16,
+                                                fontWeight: FontWeight.w900),
+                                            Text(
+                                              maxLines: 4,
+                                              'Specialized in large size printing up-to A0, \nDigital Printing, color xerox',
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  color:
+                                                      AppColors.mainBlackColor),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Container(
+                                              alignment: Alignment.center,
+                                              height: 21,
+                                              width: 108,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                  color: Color(0xFFF2EEEE)
+                                                      .withOpacity(1)),
+                                              child: CustomText(
+                                                  text: 'Plumbing Services',
+                                                  textColor:
+                                                      AppColors.mainBlackColor,
+                                                  textSize: 10,
+                                                  fontWeight: FontWeight.w700),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            CustomText(
+                                                text:
+                                                    'Business Hours - 9:am to 10:00pm',
+                                                textColor:
+                                                    AppColors.mainBlackColor,
+                                                textSize: 12,
+                                                fontWeight: FontWeight.w400),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  // crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        CustomRatingContainer(
+                                            width: 24.3,
+                                            height: 20.38,
+                                            borderRadius: 3.65,
+                                            text: '4.3',
+                                            fontSize: 11.38),
+                                        CustomRatingBar(
+                                            rating: 4.3,
+                                            itemSize: 13.87,
+                                            itemCount: 5,
+                                            iconColor: AppColors.starColor,
+                                            unstarColor: AppColors.unStarColor),
+                                        CustomRatingCount(
+                                            text: '220 ratings',
+                                            fontSize: 10,
+                                            color: Color(0xFF161D24))
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: 55,
+                                    ),
+                                    Row(
+                                      children: [
+                                        CustomButton(
+                                          onPressed: () {},
+                                          text: 'CALL NOW',
+                                          buttonColor: Color(0xFF1B4F7F),
+                                          borderRadius: 10,
+                                          buttonSize: Size(100, 40),
+                                          fontColor: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Text(
+                                          'Visit Website',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                              color: Color(0xFF1B4F7F)),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }

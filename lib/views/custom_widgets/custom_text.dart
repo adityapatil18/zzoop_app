@@ -12,7 +12,7 @@ class CustomText extends StatelessWidget {
   final Color textColor;
   final double textSize;
   final FontWeight fontWeight;
-  final bool isItalic;
+  final bool? isItalic;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CustomText extends StatelessWidget {
           fontSize: textSize,
           color: textColor,
           fontWeight: fontWeight,
-          fontStyle: isItalic
+          fontStyle: isItalic!
               ? FontStyle.italic
               : FontStyle.normal, // Apply italic style conditionally
         ));

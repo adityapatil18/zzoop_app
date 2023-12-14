@@ -19,8 +19,8 @@ class CustomServicesList extends StatelessWidget {
         ListTile(
           leading: Image.asset(
             imagePath,
-            height: 16,
-            width: 16,
+            height: 20,
+            width: 20,
             color: AppColors.mainBlackColor,
           ),
           trailing: IconButton(

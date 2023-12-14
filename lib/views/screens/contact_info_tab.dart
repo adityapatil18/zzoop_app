@@ -4,8 +4,8 @@ import 'package:zzoop/views/custom_widgets/cutom_elevated_button_widget.dart';
 import '../../constants/colors.dart';
 import '../custom_widgets/custom_bottom_button.dart';
 
-class contactInfo extends StatelessWidget {
-  const contactInfo({super.key});
+class contactInfoTab extends StatelessWidget {
+  const contactInfoTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +112,7 @@ class contactInfo extends StatelessWidget {
                     fontColor: AppColors.containerColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
-                    buttonSize: Size(150, 60),
+                    buttonSize: Size(140, 60),
                   ),
                   CustomButton(
                     onPressed: () {},
@@ -123,7 +123,7 @@ class contactInfo extends StatelessWidget {
                     fontColor: AppColors.containerColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
-                    buttonSize: Size(150, 60),
+                    buttonSize: Size(140, 60),
                   )
                 ],
               ),

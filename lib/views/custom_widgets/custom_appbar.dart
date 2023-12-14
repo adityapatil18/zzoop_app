@@ -2,6 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:zzoop/constants/colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String logoImagePath;
+  final String profileImagePath;
+  final VoidCallback onProfileTap;
+  final VoidCallback onNotificationTap;
+
+  const CustomAppBar({
+    Key? key,
+    required this.logoImagePath,
+    required this.profileImagePath,
+    required this.onProfileTap,
+    required this.onNotificationTap,
+  }) : super(key: key);
+
   @override
   Size get preferredSize => Size.fromHeight(60.0); // Preferred height
 
@@ -12,22 +25,25 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Image.asset(
-          'images/Logo.png',
+          logoImagePath,
           height: 17,
           width: 94.07,
         ),
       ),
       actions: [
-        Image.asset(
-          'images/profilee.png',
-          height: 31,
-          width: 31,
+        GestureDetector(
+          child: Image.asset(
+            profileImagePath,
+            height: 31,
+            width: 31,
+          ),
+          onTap: onProfileTap,
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: onNotificationTap,
           icon: Icon(
             Icons.notifications,
-            size: 16,
+            size: 20,
             color: AppColors.containerColor,
           ),
         ),

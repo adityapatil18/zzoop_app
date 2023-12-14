@@ -4,6 +4,7 @@ import 'package:zzoop/views/custom_widgets/custom_appbar.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_container.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_counts_widgets.dart';
 import 'package:zzoop/views/custom_widgets/custom_ratingbar_widegt.dart';
+import 'package:zzoop/views/custom_widgets/custom_text.dart';
 import 'package:zzoop/views/custom_widgets/cutom_elevated_button_widget.dart';
 
 class IndiviualServicesScreen extends StatelessWidget {
@@ -12,14 +13,14 @@ class IndiviualServicesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final List<String> texts = [
-    //   'Highest Rating',
-    //   'Zzoop Verified',
-    // ];
-
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(
+        logoImagePath: "images/Logo.png",
+        profileImagePath: "images/profilee.png",
+        onProfileTap: () {},
+        onNotificationTap: () {},
+      ),
       body: Column(
         children: [
           Container(
@@ -29,7 +30,9 @@ class IndiviualServicesScreen extends StatelessWidget {
             child: Row(
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   icon: Icon(
                     Icons.arrow_back_sharp,
                     color: AppColors.white,
@@ -66,7 +69,11 @@ class IndiviualServicesScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(width: 0.5)),
-                child: Text('Highest Rating'),
+                child: CustomText(
+                    text: 'Highest Rating',
+                    textColor: AppColors.mainBlackColor,
+                    textSize: 12,
+                    fontWeight: FontWeight.w400),
               ),
               Container(
                 alignment: Alignment.center,
@@ -75,21 +82,22 @@ class IndiviualServicesScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(width: 0.5)),
-                child: Text('Zzoop Verified'),
+                child: CustomText(
+                    text: 'Zzoop Verified',
+                    textColor: AppColors.mainBlackColor,
+                    textSize: 12,
+                    fontWeight: FontWeight.w400),
               ),
               Image.asset(
                 'images/filters.png',
                 height: 15,
                 width: 15,
               ),
-              Text(
-                'All Filters',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.mainBlackColor,
-                ),
-              )
+              CustomText(
+                  text: 'All Filters',
+                  textColor: AppColors.mainBlackColor,
+                  textSize: 14,
+                  fontWeight: FontWeight.w600)
             ],
           ),
           SizedBox(
@@ -121,11 +129,8 @@ class IndiviualServicesScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
-                    SizedBox(
-                      height: 10,
-                    ),
                     Container(
-                      height: 206,
+                      height: 215,
                       color: AppColors.white,
                       width: MediaQuery.sizeOf(context).width,
                       child: Padding(
@@ -144,20 +149,18 @@ class IndiviualServicesScreen extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.all(12.0),
                                   child: Container(
-                                    height: 110,
+                                    height: 115,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Text(
-                                          'Super Fast Services',
-                                          style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w900,
-                                              color: AppColors.mainBlackColor),
-                                        ),
+                                        CustomText(
+                                            text: 'Super Fast Services',
+                                            textColor: AppColors.mainBlackColor,
+                                            textSize: 16,
+                                            fontWeight: FontWeight.w900),
                                         Text(
                                           maxLines: 4,
                                           'Specialized in large size printing up-to A0, \nDigital Printing, color xerox',
@@ -165,6 +168,9 @@ class IndiviualServicesScreen extends StatelessWidget {
                                               fontSize: 12,
                                               fontWeight: FontWeight.w400,
                                               color: AppColors.mainBlackColor),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
                                         ),
                                         Container(
                                           alignment: Alignment.center,
@@ -175,22 +181,22 @@ class IndiviualServicesScreen extends StatelessWidget {
                                                   BorderRadius.circular(5),
                                               color: Color(0xFFF2EEEE)
                                                   .withOpacity(1)),
-                                          child: Text(
-                                            text,
-                                            style: TextStyle(
-                                                fontSize: 10,
-                                                fontWeight: FontWeight.w700,
-                                                color:
-                                                    AppColors.mainBlackColor),
-                                          ),
+                                          child: CustomText(
+                                              text: text,
+                                              textColor:
+                                                  AppColors.mainBlackColor,
+                                              textSize: 10,
+                                              fontWeight: FontWeight.w700),
                                         ),
-                                        Text(
-                                          'Business Hours - 9:am to 10:00pm',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400,
-                                              color: AppColors.mainBlackColor),
-                                        )
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        CustomText(
+                                            text:
+                                                'Business Hours - 9:am to 10:00pm',
+                                            textColor: AppColors.mainBlackColor,
+                                            textSize: 12,
+                                            fontWeight: FontWeight.w400),
                                       ],
                                     ),
                                   ),
@@ -198,7 +204,7 @@ class IndiviualServicesScreen extends StatelessWidget {
                               ],
                             ),
                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -231,13 +237,13 @@ class IndiviualServicesScreen extends StatelessWidget {
                                       text: 'CALL NOW',
                                       buttonColor: Color(0xFF1B4F7F),
                                       borderRadius: 10,
-                                      buttonSize: Size(118, 40),
+                                      buttonSize: Size(100, 40),
                                       fontColor: Colors.white,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                     ),
                                     SizedBox(
-                                      width: 30,
+                                      width: 15,
                                     ),
                                     Text(
                                       'Visit Website',
