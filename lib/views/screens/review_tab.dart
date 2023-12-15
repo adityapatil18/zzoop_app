@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_bottom_button.dart';
 import 'package:zzoop/views/custom_widgets/custom_rating_container.dart';

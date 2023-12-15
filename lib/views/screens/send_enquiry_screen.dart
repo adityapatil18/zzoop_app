@@ -5,6 +5,8 @@ import 'package:zzoop/views/screens/contact_info_tab.dart';
 import 'package:zzoop/views/custom_widgets/custom_tab_bar_widget.dart';
 import 'package:zzoop/views/screens/review_tab.dart';
 
+import '../custom_widgets/custom_bottom_button.dart';
+
 class SendEnquiryTabScreen extends StatelessWidget {
   const SendEnquiryTabScreen({super.key});
 

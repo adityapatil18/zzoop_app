@@ -4,8 +4,49 @@ import 'package:zzoop/views/custom_widgets/custom_bottom_button.dart';
 import 'package:zzoop/views/custom_widgets/custom_text.dart';
 import 'package:zzoop/views/custom_widgets/textfeild_widet.dart';
 
-class EnquiryScreen extends StatelessWidget {
+class EnquiryScreen extends StatefulWidget {
   const EnquiryScreen({super.key});
+
+  @override
+  State<EnquiryScreen> createState() => _EnquiryScreenState();
+}
+
+class _EnquiryScreenState extends State<EnquiryScreen> {
+  TextEditingController _dayController = TextEditingController();
+  TextEditingController _timeController = TextEditingController();
+
+  DateTime? _selectedDate;
+  TimeOfDay? _selectedTime;
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now(),
+      lastDate: DateTime(2101),
+    );
+
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+        _dayController.text = "${picked.toLocal()}".split(' ')[0];
+      });
+    }
+  }
+
+  Future<void> _selectTime(BuildContext context) async {
+    final TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
+
+    if (picked != null && picked != _selectedTime) {
+      setState(() {
+        _selectedTime = picked;
+        _timeController.text = "${picked.format(context)}";
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +110,13 @@ class EnquiryScreen extends StatelessWidget {
                 height: 5,
               ),
               CustomTextField(
-                  controller: TextEditingController(), hintText: 'Select Day'),
+                  onTap: () {
+                    setState(() {
+                      _selectDate(context);
+                    });
+                  },
+                  controller: _dayController,
+                  hintText: 'Select Day'),
               SizedBox(
                 height: 10,
               ),
@@ -82,7 +129,13 @@ class EnquiryScreen extends StatelessWidget {
                 height: 5,
               ),
               CustomTextField(
-                  controller: TextEditingController(), hintText: 'Select Time'),
+                  onTap: () {
+                    setState(() {
+                      _selectTime(context);
+                    });
+                  },
+                  controller: _timeController,
+                  hintText: 'Select Time'),
               SizedBox(
                 height: 10,
               ),

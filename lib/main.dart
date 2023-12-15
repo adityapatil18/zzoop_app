@@ -28,7 +28,7 @@ class ZZOOP extends StatelessWidget {
       theme: ThemeData(
           appBarTheme: AppBarTheme(elevation: 0, color: AppColors.white),
           textTheme: GoogleFonts.barlowTextTheme(Theme.of(context).textTheme)),
-      home: BottomNavigationBarScreen(),
+      home: SplashScreen(),
     );
   }
 }

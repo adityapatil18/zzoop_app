@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zzoop/constants/colors.dart';
 import 'package:zzoop/views/custom_widgets/custom_bottom_button.dart';
 import 'package:zzoop/views/custom_widgets/custom_text.dart';
+import 'package:zzoop/views/screens/enquiry_screen.dart';
 
 import '../custom_widgets/custom_services_widget.dart';
 
@@ -117,7 +118,13 @@ class AboutBussinessTab extends StatelessWidget {
       ),
       bottomNavigationBar: CustomBottomButton(
         text: 'Send Enquiry',
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => EnquiryScreen(),
+              ));
+        },
       ),
     );
   }

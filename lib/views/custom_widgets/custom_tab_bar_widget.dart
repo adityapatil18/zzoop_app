@@ -14,6 +14,7 @@ class CustomTabBarWidget extends StatelessWidget {
       child: Column(
         children: [
           TabBar(
+            tabAlignment: TabAlignment.start,
             tabs: tabs,
 
             isScrollable: true,
