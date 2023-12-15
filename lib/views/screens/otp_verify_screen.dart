@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:zzoop/views/custom_widgets/main_button.dart';
 import 'package:zzoop/views/screens/bottom_navigation_bar_screen.dart';
 
-
 class OtpVerificationScreen extends StatelessWidget {
   OtpVerificationScreen({super.key});
 
