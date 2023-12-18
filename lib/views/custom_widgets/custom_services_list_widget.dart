@@ -7,10 +7,12 @@ class CustomServicesList extends StatelessWidget {
       {super.key,
       required this.text,
       required this.imagePath,
-      required this.onPressed});
+      required this.onPressed,
+      this.buttonPressed});
   final String text;
   final String imagePath;
   final VoidCallback onPressed;
+  final VoidCallback? buttonPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class CustomServicesList extends StatelessWidget {
             color: AppColors.mainBlackColor,
           ),
           trailing: IconButton(
-              onPressed: () {},
+              onPressed: buttonPressed,
               icon: Icon(
                 Icons.arrow_forward_ios,
                 size: 15,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zzoop/views/custom_widgets/cutom_elevated_button_widget.dart';
+import 'package:zzoop/views/screens/enquiry_screen.dart';
 
 import '../../constants/colors.dart';
 import '../custom_widgets/custom_bottom_button.dart';
@@ -133,7 +134,13 @@ class contactInfoTab extends StatelessWidget {
       ),
       bottomNavigationBar: CustomBottomButton(
         text: 'Send Enquiry',
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => EnquiryScreen(),
+              ));
+        },
       ),
     );
   }

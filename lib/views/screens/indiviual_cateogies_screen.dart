@@ -7,6 +7,8 @@ import 'package:zzoop/views/custom_widgets/custom_ratingbar_widegt.dart';
 import 'package:zzoop/views/custom_widgets/custom_text.dart';
 import 'package:zzoop/views/custom_widgets/cutom_elevated_button_widget.dart';
 
+import 'send_enquiry_screen.dart';
+
 class IndiviualServicesScreen extends StatelessWidget {
   const IndiviualServicesScreen({super.key, required this.text});
   final String text;
@@ -129,134 +131,147 @@ class IndiviualServicesScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
-                    Container(
-                      height: 215,
-                      color: AppColors.white,
-                      width: MediaQuery.sizeOf(context).width,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  height: 110,
-                                  width: 110,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: Image.asset('images/plumbing.png'),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Container(
-                                    height: 115,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        CustomText(
-                                            text: 'Super Fast Services',
-                                            textColor: AppColors.mainBlackColor,
-                                            textSize: 16,
-                                            fontWeight: FontWeight.w900),
-                                        Text(
-                                          maxLines: 4,
-                                          'Specialized in large size printing up-to A0, \nDigital Printing, color xerox',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400,
-                                              color: AppColors.mainBlackColor),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Container(
-                                          alignment: Alignment.center,
-                                          height: 21,
-                                          width: 108,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(5),
-                                              color: Color(0xFFF2EEEE)
-                                                  .withOpacity(1)),
-                                          child: CustomText(
-                                              text: text,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SendEnquiryTabScreen(),
+                            ));
+                      },
+                      child: Container(
+                        height: 215,
+                        color: AppColors.white,
+                        width: MediaQuery.sizeOf(context).width,
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 110,
+                                    width: 110,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5)),
+                                    child: Image.asset('images/plumbing.png'),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Container(
+                                      height: 115,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          CustomText(
+                                              text: 'Super Fast Services',
                                               textColor:
                                                   AppColors.mainBlackColor,
-                                              textSize: 10,
-                                              fontWeight: FontWeight.w700),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        CustomText(
-                                            text:
-                                                'Business Hours - 9:am to 10:00pm',
-                                            textColor: AppColors.mainBlackColor,
-                                            textSize: 12,
-                                            fontWeight: FontWeight.w400),
-                                      ],
+                                              textSize: 16,
+                                              fontWeight: FontWeight.w900),
+                                          Text(
+                                            maxLines: 4,
+                                            'Specialized in large size printing up-to A0, \nDigital Printing, color xerox',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color:
+                                                    AppColors.mainBlackColor),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Container(
+                                            alignment: Alignment.center,
+                                            height: 21,
+                                            width: 108,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
+                                                color: Color(0xFFF2EEEE)
+                                                    .withOpacity(1)),
+                                            child: CustomText(
+                                                text: text,
+                                                textColor:
+                                                    AppColors.mainBlackColor,
+                                                textSize: 10,
+                                                fontWeight: FontWeight.w700),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          CustomText(
+                                              text:
+                                                  'Business Hours - 9:am to 10:00pm',
+                                              textColor:
+                                                  AppColors.mainBlackColor,
+                                              textSize: 12,
+                                              fontWeight: FontWeight.w400),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    CustomRatingContainer(
-                                        width: 24.3,
-                                        height: 20.38,
-                                        borderRadius: 3.65,
-                                        text: '4.3',
-                                        fontSize: 11.38),
-                                    CustomRatingBar(
-                                        rating: 4.3,
-                                        itemSize: 13.87,
-                                        itemCount: 5,
-                                        iconColor: AppColors.starColor,
-                                        unstarColor: AppColors.unStarColor),
-                                    CustomRatingCount(
-                                        text: '220 ratings',
-                                        fontSize: 10,
-                                        color: Color(0xFF161D24))
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: 55,
-                                ),
-                                Row(
-                                  children: [
-                                    CustomButton(
-                                      onPressed: () {},
-                                      text: 'CALL NOW',
-                                      buttonColor: Color(0xFF1B4F7F),
-                                      borderRadius: 10,
-                                      buttonSize: Size(100, 40),
-                                      fontColor: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    Text(
-                                      'Visit Website',
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xFF1B4F7F)),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
+                                ],
+                              ),
+                              Row(
+                                // crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      CustomRatingContainer(
+                                          width: 24.3,
+                                          height: 20.38,
+                                          borderRadius: 3.65,
+                                          text: '4.3',
+                                          fontSize: 11.38),
+                                      CustomRatingBar(
+                                          rating: 4.3,
+                                          itemSize: 13.87,
+                                          itemCount: 5,
+                                          iconColor: AppColors.starColor,
+                                          unstarColor: AppColors.unStarColor),
+                                      CustomRatingCount(
+                                          text: '220 ratings',
+                                          fontSize: 10,
+                                          color: Color(0xFF161D24))
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 55,
+                                  ),
+                                  Row(
+                                    children: [
+                                      CustomButton(
+                                        onPressed: () {},
+                                        text: 'CALL NOW',
+                                        buttonColor: Color(0xFF1B4F7F),
+                                        borderRadius: 10,
+                                        buttonSize: Size(100, 40),
+                                        fontColor: Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      SizedBox(
+                                        width: 15,
+                                      ),
+                                      Text(
+                                        'Visit Website',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color(0xFF1B4F7F)),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),

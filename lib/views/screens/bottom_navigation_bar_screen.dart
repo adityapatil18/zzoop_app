@@ -19,7 +19,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   int _currentIndex = 0;
   final List<Widget> screens = [
     HomeScreen(),
-    SendEnquiryTabScreen(),
+    CategoriesScreen(),
     SettingsScreen(),
     ProfileScreen(),
   ];

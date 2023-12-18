@@ -60,7 +60,9 @@ class _EnquiryScreenState extends State<EnquiryScreen> {
             fontWeight: FontWeight.w700),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: Image.asset(
               'images/cancel.png',
               height: 21,
